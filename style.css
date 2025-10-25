@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    padding: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: linear-gradient(90deg, #463c3f, #ffeef6);
+
+}
+
+div {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 15px 55px 78px 79px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    border-radius: 8px;
+}
+
+input{
+    background-color: #ffeef6;
+    border-radius: 62px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 12px 20px; 
+    border: 1px solid #cca9b5;
+}
+
+input:hover{
+    border-radius: 55px;
+    color: #ffffff;
+    background-color: #f3b9e5;
+    border-color: #a02053;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 72px;
+    align-items: center;
+    color: #aa3a61;
+}
+
+/* Estilos para o Toast de Confirmação */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #a02053;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(160,32,83,0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease, transform 0.28s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+/* Estilo para itens da lista de tarefas */
+.tarefa-item {
+    list-style: none;
+    background: #fff0f5;
+    font-weight: 700;
+    color: #333;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #f0dfe3;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.tarefa-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(160,32,83,0.08);
+}
+
+/* Estado selecionado */
+.tarefa-item.selected {
+    background: linear-gradient(90deg, #fff0f5, #ffeef6);
+    border-left: 6px solid #a02053;
+    box-shadow: 0 8px 20px rgba(160,32,83,0.12);
+    color: #641d36;
+}
+
+/* Acessibilidade: foco via teclado */
+.tarefa-item:focus {
+    outline: 3px solid rgba(162,34,83,0.18);
+}
+
+/* Estilo para botões (adicionar / remover) */
+button, .button-container button, #btn-adicionar, #btn-remover {
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(180deg, #ff9fb6 0%, #ff6f98 100%);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    box-shadow: 0 8px 20px rgba(160,32,83,0.12);
+    transition: transform 0.14s ease, box-shadow 0.14s ease, opacity 0.14s ease;
+}
+
+#btn-remover {
+    background: linear-gradient(180deg, #ffeef6 0%, #463c3f 100%);
+}
+
+#btn-adicionar {
+    background: linear-gradient(180deg, #463c3f 0%, #776168 12%);
+}
+
+button:hover, .button-container button:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 12px 30px rgba(160,32,83,0.18);
+}
+
+button:active, .button-container button:active {
+    transform: translateY(-2px) scale(0.995);
+}
+
+button:focus {
+    outline: 3px solid rgba(162,34,83,0.12);
+}
+
+button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
